@@ -34,6 +34,8 @@ final class Coordinator {
     
     
     func update() async throws {
+        
+        // MARK: - Ask for permission
         let healthStore = HKHealthStore()
         
         guard HKHealthStore.isHealthDataAvailable() else {
@@ -59,6 +61,7 @@ final class Coordinator {
         }
         
         
+        // MARK: - Query for ECG
         // Create the electrocardiogram sample type.
         let ecgType = HKObjectType.electrocardiogramType()
         
@@ -87,6 +90,7 @@ final class Coordinator {
         
         self.total = ECGSamples.count
         
+        // MARK: - Obtain Samples
         for samples in ECGSamples {
             defer {
                 self.current += 1
@@ -124,7 +128,7 @@ final class Coordinator {
                 healthStore.execute(voltageQuery)
             }
             
-            
+            // MARK: - Transform each sample to CSV
             var table = Tabular<TabularKeys>()
             for try await dataPoint in data {
                 table.append { row in
