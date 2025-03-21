@@ -307,7 +307,8 @@
 				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use your health data to provide better insights";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the ECG data to export such data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the ECG data to export such data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,7 +340,8 @@
 				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use your health data to provide better insights";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the ECG data to export such data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the ECG data to export such data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
