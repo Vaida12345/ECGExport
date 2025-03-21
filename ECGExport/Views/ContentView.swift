@@ -29,8 +29,15 @@ struct ContentView: View {
                     
                     Text("Loading")
                 }
+                .progressViewStyle(.circular)
             } else {
-                ContentUnavailableView("Done", systemImage: "checkmark")
+                VStack {
+                    ContentUnavailableView("", systemImage: "checkmark")
+                    
+                    Text("Please find the csvs in Files > On My iPhone > ECGExport")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                }
             }
         }
         .onChange(of: scenePhase) { oldValue, newValue in
