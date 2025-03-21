@@ -6,23 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B4A48C332D8D83E1008484E2 /* Tabular in Frameworks */ = {isa = PBXBuildFile; productRef = B4A48C322D8D83E1008484E2 /* Tabular */; };
+		B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A48C3E2D8E0E13008484E2 /* ContentView.swift */; };
+		B4A48C472D8E0E13008484E2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */; };
+		B4A48C482D8E0E13008484E2 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A48C412D8E0E13008484E2 /* App.swift */; };
+		B4A48C542D8E0E74008484E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A48C4F2D8E0E74008484E2 /* Preview Assets.xcassets */; };
+		B4A48C552D8E0E74008484E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A48C512D8E0E74008484E2 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B4A48C202D8D8394008484E2 /* ECGExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4A48C3E2D8E0E13008484E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B4A48C412D8E0E13008484E2 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		B4A48C4F2D8E0E74008484E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4A48C512D8E0E74008484E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4A48C522D8E0E74008484E2 /* ECGExport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ECGExport.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B4A48C222D8D8394008484E2 /* ECGExport */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ECGExport;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B4A48C1D2D8D8394008484E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A48C332D8D83E1008484E2 /* Tabular in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +40,7 @@
 		B4A48C172D8D8394008484E2 = {
 			isa = PBXGroup;
 			children = (
-				B4A48C222D8D8394008484E2 /* ECGExport */,
+				B4A48C432D8E0E13008484E2 /* ECGExport */,
 				B4A48C212D8D8394008484E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +51,43 @@
 				B4A48C202D8D8394008484E2 /* ECGExport.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B4A48C432D8E0E13008484E2 /* ECGExport */ = {
+			isa = PBXGroup;
+			children = (
+				B4A48C412D8E0E13008484E2 /* App.swift */,
+				B4A48C4E2D8E0E3A008484E2 /* Views */,
+				B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */,
+				B4A48C532D8E0E74008484E2 /* Assets */,
+			);
+			path = ECGExport;
+			sourceTree = "<group>";
+		};
+		B4A48C4E2D8E0E3A008484E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4A48C3E2D8E0E13008484E2 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4A48C502D8E0E74008484E2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B4A48C4F2D8E0E74008484E2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4A48C532D8E0E74008484E2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B4A48C502D8E0E74008484E2 /* Preview Content */,
+				B4A48C512D8E0E74008484E2 /* Assets.xcassets */,
+				B4A48C522D8E0E74008484E2 /* ECGExport.entitlements */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,11 +105,9 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				B4A48C222D8D8394008484E2 /* ECGExport */,
-			);
 			name = ECGExport;
 			packageProductDependencies = (
+				B4A48C322D8D83E1008484E2 /* Tabular */,
 			);
 			productName = ECGExport;
 			productReference = B4A48C202D8D8394008484E2 /* ECGExport.app */;
@@ -94,6 +137,9 @@
 			);
 			mainGroup = B4A48C172D8D8394008484E2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B4A48C312D8D83E1008484E2 /* XCRemoteSwiftPackageReference "Tabular" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B4A48C212D8D8394008484E2 /* Products */;
 			projectDirPath = "";
@@ -109,6 +155,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A48C542D8E0E74008484E2 /* Preview Assets.xcassets in Resources */,
+				B4A48C552D8E0E74008484E2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */,
+				B4A48C472D8E0E13008484E2 /* Coordinator.swift in Sources */,
+				B4A48C482D8E0E13008484E2 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,17 +300,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use your health data to provide better insights";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -278,17 +332,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use your health data to provide better insights";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4A48C312D8D83E1008484E2 /* XCRemoteSwiftPackageReference "Tabular" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Vaida12345/Tabular";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4A48C322D8D83E1008484E2 /* Tabular */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4A48C312D8D83E1008484E2 /* XCRemoteSwiftPackageReference "Tabular" */;
+			productName = Tabular;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4A48C182D8D8394008484E2 /* Project object */;
 }
