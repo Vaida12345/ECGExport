@@ -2,12 +2,21 @@
   "originHash" : "c378956b876996e81d21e4c1fba6a903fcc2e97657055f284784eb1173c3c6cd",
   "pins" : [
     {
+      "identity" : "detaileddescription",
+      "kind" : "remoteSourceControl",
+      "location" : "https://www.github.com/Vaida12345/DetailedDescription",
+      "state" : {
+        "revision" : "ef75fca3eeab23134c9be2f5832704aefad14e14",
+        "version" : "2.1.0"
+      }
+    },
+    {
       "identity" : "essentials",
       "kind" : "remoteSourceControl",
       "location" : "https://www.github.com/Vaida12345/Essentials",
       "state" : {
-        "revision" : "98f2a8a5861fdf857095177de33a565b0331c06e",
-        "version" : "1.0.20"
+        "revision" : "7fdb21d47a3eb8f828a519f11bbe226d0d4fc7af",
+        "version" : "1.1.3"
       }
     },
     {
@@ -15,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://www.github.com/Vaida12345/FinderItem",
       "state" : {
-        "revision" : "0d4af1b92c1969e638b90236a4671d11fcb564e2",
-        "version" : "1.0.11"
+        "revision" : "2013b35976c3836a5e1f6afc6b080bbc01bf677d",
+        "version" : "1.1.1"
       }
     },
     {
@@ -25,7 +34,7 @@
       "location" : "https://github.com/Vaida12345/Tabular",
       "state" : {
         "branch" : "main",
-        "revision" : "2369394d5c48fac9101cc1ef9892b54a8be06add"
+        "revision" : "32197065d4e76e70877adfe874e50fa56daeb1c2"
       }
     }
   ],
