@@ -19,17 +19,8 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if coordinator.current != coordinator.total {
-                VStack {
-                    if let total = coordinator.total {
-                        ProgressView("", value: Double(coordinator.current) / Double(total))
-                    } else {
-                        ProgressView()
-                    }
-                    
-                    Text("Loading")
-                }
-                .progressViewStyle(.circular)
+            if !coordinator.allFinished {
+                ExportProgressView(coordinator: coordinator)
             } else {
                 VStack {
                     ContentUnavailableView("", systemImage: "checkmark")
@@ -40,6 +31,7 @@ struct ContentView: View {
                 }
             }
         }
+        .animation(.spring, value: coordinator.progress)
         .onChange(of: scenePhase) { oldValue, newValue in
             guard newValue == .active else { return }
             

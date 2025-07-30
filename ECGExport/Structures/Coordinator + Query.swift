@@ -9,6 +9,7 @@ import HealthKit
 import FinderItem
 import Tabular
 import Essentials
+import SwiftUI
 
 
 extension Coordinator {
@@ -30,20 +31,30 @@ extension Coordinator {
         
         
         try await self.storeECG(from: healthStore)
+        
+        withAnimation {
+            allFinished = true
+        }
     }
     
     
     func storeECG(from healthStore: HKHealthStore) async throws {
+        let progress = ExportProgress(name: "ECG", systemImage: "bolt.heart")
+        withAnimation {
+            self.progress.append(progress)
+        }
+        
         let query = HKSampleQueryDescriptor(predicates: [.electrocardiogram()], sortDescriptors: [])
         let samples = try await query.result(for: healthStore)
-        self.total = samples.count
+        progress.totalCount = samples.count
         
         let destFolder = FinderItem.documentsDirectory/"ECG"
         try destFolder.makeDirectory()
+        progress.stage = .working
         
         for samples in samples {
             let itemFolder = destFolder/"\(Int(samples.startDate.timeIntervalSince1970))" // unix timestamp
-            defer { self.current += 1 }
+            defer { withAnimation { progress.completedCount += 1 } }
             guard !itemFolder.exists else { continue }
             
             try itemFolder.makeDirectory()
@@ -94,6 +105,8 @@ extension Coordinator {
             ]
             try JSONSerialization.data(withJSONObject: metadata, options: [.prettyPrinted]).write(to: itemFolder/"metadata.json")
         }
+        
+        progress.stage = .finished
     }
     
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B22E39DB19001B5BAE /* ExportProgress.swift */; };
+		B41A05B52E39DBD5001B5BAE /* ExportProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */; };
 		B49D19E22E3996EA00841A32 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D19E12E3996E800841A32 /* Descriptions.swift */; };
 		B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */; };
 		B4A48C332D8D83E1008484E2 /* Tabular in Frameworks */ = {isa = PBXBuildFile; productRef = B4A48C322D8D83E1008484E2 /* Tabular */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B41A05B22E39DB19001B5BAE /* ExportProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgress.swift; sourceTree = "<group>"; };
+		B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgressView.swift; sourceTree = "<group>"; };
 		B49D19E12E3996E800841A32 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator + Query.swift"; sourceTree = "<group>"; };
 		B4A48C202D8D8394008484E2 /* ECGExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +58,7 @@
 			children = (
 				B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */,
 				B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */,
+				B41A05B22E39DB19001B5BAE /* ExportProgress.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A48C3E2D8E0E13008484E2 /* ContentView.swift */,
+				B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,7 +149,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					B4A48C1F2D8D8394008484E2 = {
 						CreatedOnToolsVersion = 16.2;
@@ -189,11 +195,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */,
 				B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */,
 				B4A48C472D8E0E13008484E2 /* Coordinator.swift in Sources */,
 				B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */,
 				B4A48C482D8E0E13008484E2 /* App.swift in Sources */,
 				B49D19E22E3996EA00841A32 /* Descriptions.swift in Sources */,
+				B41A05B52E39DBD5001B5BAE /* ExportProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +243,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -298,6 +307,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -328,7 +338,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
-				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the ECG data to export such data";
@@ -362,7 +371,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
-				DEVELOPMENT_TEAM = UJK52W4D7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the ECG data to export such data";
