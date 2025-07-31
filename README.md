@@ -48,7 +48,7 @@ Heart rate data exist in a folder next to `ECG`
 The heart rate data is stored in a flat format internally, meaning it lacks hierarchical structure and resides at the same level. To allow easy access, I grouped these data using its start date.
 
 > Note: 
-> Unix `Date` does not store timezone, hence the resulting data *may* be put in a different date. Talk to me and we can look into this.
+> The date string value is localized to your timezone. Hence results from different timezones will be different. If you change your timezone, it is recommended to delete all history files to obtain fresh ones. 
 
 ### Table Keys
 
@@ -60,7 +60,7 @@ Each file is just a CSV table. The metadata is stored along each value.
 | `endDate` | ISO8601 Date | The sample’s end date. | "2021-12-14T12:56:23Z" |
 | `value` | Double | The sample's data in beats per minute | 99.0 |
 | `aggregationStyle` | [String](https://developer.apple.com/documentation/healthkit/hkquantityaggregationstyle) | Describes how quantities are aggregated over time. | "discreteTemporallyWeighted" |
-| `motionContext` | [String](https://developer.apple.com/documentation/healthkit/hkheartratemotioncontext) | The user’s activity level when the heart rate sample was measured. | "sedentary" | 
+| `motionContext` | [String?](https://developer.apple.com/documentation/healthkit/hkheartratemotioncontext) | The user’s activity level when the heart rate sample was measured. | "sedentary" | 
 | `source` | String | The app or device that created this object. |  |
 | `groupIndex` | Int | The identifier of the which to which the sample belongs (read more below) | 0 |
 

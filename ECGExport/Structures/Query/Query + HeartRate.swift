@@ -32,17 +32,21 @@ extension Coordinator {
             progress.stage = .working
         }
         
-        let aggregated = samples.reduce(into: [DayComponent: [HKQuantitySample]]()) { result, sample in
+        let aggregated = samples.reduce(into: [DateComponents: [HKQuantitySample]]()) { result, sample in
             let date = Calendar.current.dateComponents([.year, .month, .day], from: sample.startDate)
-            result[DayComponent(year: date.year!, month: date.month!, day: date.day!), default: []].append(sample)
+            result[date, default: []].append(sample)
         }
+        let currentComponent = Calendar.current.dateComponents([.year, .month, .day], from: Date())
         await MainActor.run {
             progress.totalCount = aggregated.count
         }
         
         for (component, samples) in aggregated {
-            let dest = destFolder/"\(component).csv"
+            let dest = destFolder/"\(currentComponent.year ?? 0)-\(currentComponent.month ?? 0)-\(currentComponent.day ?? 0).csv"
             await MainActor.run { withAnimation { progress.completedCount += 1 } }
+            if component == currentComponent {
+                try dest.removeIfExists() // always updates today
+            }
             
             guard !dest.exists else { continue }
             
