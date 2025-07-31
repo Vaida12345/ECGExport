@@ -10,7 +10,8 @@
 		B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B22E39DB19001B5BAE /* ExportProgress.swift */; };
 		B41A05B52E39DBD5001B5BAE /* ExportProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */; };
 		B41A05B82E39E582001B5BAE /* Query + ECG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B72E39E57F001B5BAE /* Query + ECG.swift */; };
-		B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */; };
+		B41A05BA2E39E5D2001B5BAE /* Query + HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B92E39E5CD001B5BAE /* Query + HeartRate.swift */; };
+		B498B9982E3B954E000CCEE5 /* DayComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498B9972E3B9549000CCEE5 /* DayComponent.swift */; };
 		B499272D2E3B6DDD000207F5 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B499272C2E3B6DDD000207F5 /* CompletionView.swift */; };
 		B49D19E22E3996EA00841A32 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D19E12E3996E800841A32 /* Descriptions.swift */; };
 		B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */; };
@@ -26,7 +27,9 @@
 		B41A05B22E39DB19001B5BAE /* ExportProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgress.swift; sourceTree = "<group>"; };
 		B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgressView.swift; sourceTree = "<group>"; };
 		B41A05B72E39E57F001B5BAE /* Query + ECG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + ECG.swift"; sourceTree = "<group>"; };
-		B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + Quantity.swift"; sourceTree = "<group>"; };
+		B41A05B92E39E5CD001B5BAE /* Query + HeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + HeartRate.swift"; sourceTree = "<group>"; };
+		B498B9972E3B9549000CCEE5 /* DayComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayComponent.swift; sourceTree = "<group>"; };
+		B498B9992E3B96C2000CCEE5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B499272C2E3B6DDD000207F5 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		B49D19E12E3996E800841A32 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator + Query.swift"; sourceTree = "<group>"; };
@@ -56,7 +59,7 @@
 			children = (
 				B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */,
 				B41A05B72E39E57F001B5BAE /* Query + ECG.swift */,
-				B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */,
+				B41A05B92E39E5CD001B5BAE /* Query + HeartRate.swift */,
 			);
 			path = Query;
 			sourceTree = "<group>";
@@ -72,6 +75,7 @@
 		B49D3F8D2E3972DF00AB56D0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				B498B9972E3B9549000CCEE5 /* DayComponent.swift */,
 				B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */,
 				B41A05B62E39E55F001B5BAE /* Query */,
 				B41A05B22E39DB19001B5BAE /* ExportProgress.swift */,
@@ -82,6 +86,7 @@
 		B4A48C172D8D8394008484E2 = {
 			isa = PBXGroup;
 			children = (
+				B498B9992E3B96C2000CCEE5 /* README.md */,
 				B4A48C432D8E0E13008484E2 /* ECGExport */,
 				B4A48C212D8D8394008484E2 /* Products */,
 			);
@@ -213,9 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */,
+				B498B9982E3B954E000CCEE5 /* DayComponent.swift in Sources */,
 				B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */,
 				B4A48C472D8E0E13008484E2 /* Coordinator.swift in Sources */,
-				B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */,
+				B41A05BA2E39E5D2001B5BAE /* Query + HeartRate.swift in Sources */,
 				B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */,
 				B499272D2E3B6DDD000207F5 /* CompletionView.swift in Sources */,
 				B41A05B82E39E582001B5BAE /* Query + ECG.swift in Sources */,
@@ -360,8 +366,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the ECG data to export such data";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the ECG data to export such data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the health data to export such data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the health data to export such data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,8 +399,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the ECG data to export such data";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the ECG data to export such data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the health data to export such data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the health data to export such data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

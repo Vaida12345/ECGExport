@@ -12,7 +12,7 @@ import SwiftUI
 
 extension Coordinator {
     
-    func update() async throws {
+    nonisolated func update() async throws {
         
         // MARK: - Ask for permission
         let healthStore = HKHealthStore()
@@ -22,16 +22,20 @@ extension Coordinator {
         }
         
         let readTypes: Set<HKObjectType> = [ // FIXME: change the read types.
-            HKObjectType.electrocardiogramType()
+            HKObjectType.electrocardiogramType(),
+            HKObjectType.quantityType(forIdentifier: .heartRate)!
         ]
         
         try await healthStore.requestAuthorization(toShare: [], read: readTypes)
         
         
         try await self.storeECG(from: healthStore)
+        try await self.storeHeartRate(from: healthStore)
         
-        withAnimation(.default.delay(0.75)) {
-            allFinished = true
+        await MainActor.run {
+            withAnimation(.default.delay(0.75)) {
+                allFinished = true
+            }
         }
     }
     

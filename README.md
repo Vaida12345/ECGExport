@@ -21,8 +21,8 @@ Metadata is a JSON-encoded key-value pairs. Here is a table for the metadata key
 >
 > Some `String`s are names of enum cases, please refer to the Swift declaration for the cases and description.
 
-| name | type | description | Example |
-|------|------|-------------|---------|
+| name | type | description | example value |
+|------|------|-------------|---------------|
 | `startDate` | ISO8601 Date | The sample’s start date. | "2021-12-14T12:55:53Z" |
 | `endDate` | ISO8601 Date | The sample’s end date. | "2021-12-14T12:56:23Z" |
 | `hasUndeterminedDuration` | Bool | Indicates whether the sample has an unknown duration. | false |
@@ -33,4 +33,38 @@ Metadata is a JSON-encoded key-value pairs. Here is a table for the metadata key
 | `AppleECGAlgorithmVersion` | Int | the version number of the algorithm Apple Watch uses to generate an ECG reading. | 1 |
 | `source` | String | The app or device that created this object. | "ECG (com.apple.NanoHeartRhythm)" |
 | `lead` | String | Currently always `appleWatchSimilarToLeadI` | "appleWatchSimilarToLeadI" |
+
+
+## Heart Rate
+Heart rate data exist in a folder next to `ECG`
+
+```sh
+├── ECG
+├── Heart Rate
+│   ├── 2020-3-26.csv
+│   └── ...
+```
+
+The heart rate data, which is represented in flat internally, is grouped into its start date.
+
+> Note: 
+> Unix `Date` does not store timezone, hence the resulting data *may* be put in a different date. Talk to me and we can look into this.
+
+### Table Keys
+
+Each file is just a CSV table. The metadata is stored along each value.
+
+| name | type | description | example value |
+|------|------|-------------|---------------|
+| `startDate` | ISO8601 Date | The sample’s start date. | "2021-12-14T12:55:53Z" |
+| `endDate` | ISO8601 Date | The sample’s end date. | "2021-12-14T12:56:23Z" |
+| `value` | Double | The sample's data in beats per minute | 99.0 |
+| `aggregationStyle` | [String](https://developer.apple.com/documentation/healthkit/hkquantityaggregationstyle) | Describes how quantities are aggregated over time. | "discreteTemporallyWeighted" |
+| `motionContext` | [String](https://developer.apple.com/documentation/healthkit/hkheartratemotioncontext) | The user’s activity level when the heart rate sample was measured. | "sedentary" | 
+| `source` | String | The app or device that created this object. |  |
+| `groupIndex` | Int | The identifier of the which to which the sample belongs (read more below) | 0 |
+
+> groupIndex:
+> `HealthKit` provides heart rate data in two ways: individual data or clusters of data. I presume data are delivered in cluster when they are recorded in a high frequency. To preserve this *clusterness*, I assigned each cluster a different `groupIndex` to differentiate. Talk to me if you want to look into this.
+
 

@@ -39,3 +39,29 @@ extension HKElectrocardiogram.SymptomsStatus: @retroactive CustomStringConvertib
     }
     
 }
+
+
+extension HKQuantityAggregationStyle: @retroactive CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .discreteArithmetic: "discreteArithmetic"
+        case .discrete: "discrete"
+        case .cumulative: "cumulative"
+        case .discreteTemporallyWeighted: "discreteTemporallyWeighted"
+        case .discreteEquivalentContinuousLevel: "discreteEquivalentContinuousLevel"
+        @unknown default: self.rawValue.description
+        }
+    }
+}
+
+
+extension HKHeartRateMotionContext: @retroactive CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .sedentary: "sedentary"
+        case .active: "active"
+        case .notSet: "notSet"
+        @unknown default: self.rawValue.description
+        }
+    }
+}

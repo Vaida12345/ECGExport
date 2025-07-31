@@ -8,8 +8,9 @@
 import SwiftUI
 
 
+@MainActor
 @Observable
-final class ExportProgress: Identifiable, Equatable {
+final class ExportProgress: Identifiable, @preconcurrency Equatable {
     
     let id = UUID()
     
