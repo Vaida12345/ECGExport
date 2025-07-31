@@ -10,12 +10,12 @@ import SwiftUI
 
 struct ExportProgressView: View {
     
-    @Bindable var coordinator: Coordinator
+    let progresses: [ExportProgress]
     @State private var position = ScrollPosition(idType: UUID.self)
     
     var body: some View {
         List {
-            ForEach(coordinator.progress) { progress in
+            ForEach(progresses) { progress in
                 VStack(alignment: .leading) {
                     HStack {
                         Label(progress.name, systemImage: progress.systemImage)
@@ -36,18 +36,17 @@ struct ExportProgressView: View {
                         .font(.callout)
                     }
                     
-                    if progress.stage != .finished {
-                        ProgressView(value: progress.fractionCompleted)
-                            .progressViewStyle(.linear)
-                            .padding(.vertical, 5)
-                    }
+                    ProgressView(value: progress.fractionCompleted)
+                        .progressViewStyle(.linear)
+                        .padding(.vertical, 5)
+                        .tint(progress.stage == .finished ? AnyShapeStyle(.secondary.opacity(0.5)) : AnyShapeStyle(Color.accentColor))
                 }
             }
         }
         .scrollDisabled(true)
         .scrollIndicators(.never)
         .scrollPosition($position, anchor: .bottom)
-        .onChange(of: coordinator.progress) { oldValue, newValue in
+        .onChange(of: progresses) { oldValue, newValue in
             guard let id = newValue.last?.id else { return }
             position.scrollTo(id: id, anchor: .bottom)
         }
@@ -57,6 +56,22 @@ struct ExportProgressView: View {
 
 
 #Preview {
-    ExportProgressView(coordinator: .preview)
+    @Previewable @State var progress = ExportProgress(name: "123", systemImage: "pencil", completedCount: 10, totalCount: 10)
+    
+    var isFinished: Binding<Bool> {
+        Binding<Bool> {
+            progress.stage == .finished
+        } set: { newValue in
+            withAnimation {
+                progress.stage = newValue ? .finished : .working
+            }
+        }
+    }
+    
+    ExportProgressView(progresses: [progress])
+        .overlay(alignment: .bottom) {
+            Toggle("finish", isOn: isFinished)
+                .padding()
+        }
 }
 

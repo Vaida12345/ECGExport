@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B22E39DB19001B5BAE /* ExportProgress.swift */; };
 		B41A05B52E39DBD5001B5BAE /* ExportProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */; };
+		B41A05B82E39E582001B5BAE /* Query + ECG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B72E39E57F001B5BAE /* Query + ECG.swift */; };
+		B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */; };
+		B499272D2E3B6DDD000207F5 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B499272C2E3B6DDD000207F5 /* CompletionView.swift */; };
 		B49D19E22E3996EA00841A32 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D19E12E3996E800841A32 /* Descriptions.swift */; };
 		B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */; };
 		B4A48C332D8D83E1008484E2 /* Tabular in Frameworks */ = {isa = PBXBuildFile; productRef = B4A48C322D8D83E1008484E2 /* Tabular */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		B41A05B22E39DB19001B5BAE /* ExportProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgress.swift; sourceTree = "<group>"; };
 		B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgressView.swift; sourceTree = "<group>"; };
+		B41A05B72E39E57F001B5BAE /* Query + ECG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + ECG.swift"; sourceTree = "<group>"; };
+		B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + Quantity.swift"; sourceTree = "<group>"; };
+		B499272C2E3B6DDD000207F5 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		B49D19E12E3996E800841A32 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator + Query.swift"; sourceTree = "<group>"; };
 		B4A48C202D8D8394008484E2 /* ECGExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B41A05B62E39E55F001B5BAE /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */,
+				B41A05B72E39E57F001B5BAE /* Query + ECG.swift */,
+				B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
 		B49D19E32E3996EE00841A32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */,
-				B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */,
+				B41A05B62E39E55F001B5BAE /* Query */,
 				B41A05B22E39DB19001B5BAE /* ExportProgress.swift */,
 			);
 			path = Structures;
@@ -95,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A48C3E2D8E0E13008484E2 /* ContentView.swift */,
+				B499272C2E3B6DDD000207F5 /* CompletionView.swift */,
 				B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */,
 			);
 			path = Views;
@@ -198,7 +215,10 @@
 				B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */,
 				B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */,
 				B4A48C472D8E0E13008484E2 /* Coordinator.swift in Sources */,
+				B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */,
 				B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */,
+				B499272D2E3B6DDD000207F5 /* CompletionView.swift in Sources */,
+				B41A05B82E39E582001B5BAE /* Query + ECG.swift in Sources */,
 				B4A48C482D8E0E13008484E2 /* App.swift in Sources */,
 				B49D19E22E3996EA00841A32 /* Descriptions.swift in Sources */,
 				B41A05B52E39DBD5001B5BAE /* ExportProgressView.swift in Sources */,
@@ -336,7 +356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -353,7 +373,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -369,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -386,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -20,15 +20,9 @@ struct ContentView: View {
     var body: some View {
         Group {
             if !coordinator.allFinished {
-                ExportProgressView(coordinator: coordinator)
+                ExportProgressView(progresses: coordinator.progress)
             } else {
-                VStack {
-                    ContentUnavailableView("", systemImage: "checkmark")
-                    
-                    Text("Please find the csvs in Files > On My iPhone > ECGExport")
-                        .foregroundStyle(.secondary)
-                        .font(.caption)
-                }
+                CompletionView()
             }
         }
         .animation(.spring, value: coordinator.progress)
