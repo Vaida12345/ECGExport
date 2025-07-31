@@ -45,7 +45,7 @@ Heart rate data exist in a folder next to `ECG`
 │   └── ...
 ```
 
-The heart rate data, which is represented in flat internally, is grouped into its start date.
+The heart rate data is stored in a flat format internally, meaning it lacks hierarchical structure and resides at the same level. To allow easy access, I grouped these data using its start date.
 
 > Note: 
 > Unix `Date` does not store timezone, hence the resulting data *may* be put in a different date. Talk to me and we can look into this.
@@ -64,7 +64,7 @@ Each file is just a CSV table. The metadata is stored along each value.
 | `source` | String | The app or device that created this object. |  |
 | `groupIndex` | Int | The identifier of the which to which the sample belongs (read more below) | 0 |
 
-> groupIndex:
+> `groupIndex`:
 > `HealthKit` provides heart rate data in two ways: individual data or clusters of data. I presume data are delivered in cluster when they are recorded in a high frequency. To preserve this *clusterness*, I assigned each cluster a different `groupIndex` to differentiate. Talk to me if you want to look into this.
 
 
