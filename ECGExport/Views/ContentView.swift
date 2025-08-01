@@ -12,7 +12,7 @@ import Essentials
 
 struct ContentView: View {
     
-    @State private var coordinator = Coordinator()
+    @Binding var coordinator: Coordinator
     
     @Environment(\.scenePhase) private var scenePhase
     
@@ -36,8 +36,9 @@ struct ContentView: View {
             self.coordinator.reset()
             
             Task {
-                await withErrorPresented("Failed to export ECG") {
+                await withErrorPresented("Failed to export health data") {
                     try await self.coordinator.update()
+                    logger.log("Export finished")
                 }
             }
         }
@@ -45,5 +46,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(coordinator: .constant(.preview))
 }

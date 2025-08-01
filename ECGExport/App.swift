@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ECGExportApp: App {
+    
+    @State private var coordinator = Coordinator()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(coordinator: $coordinator)
                 .background(Color.listBackground)
         }
     }

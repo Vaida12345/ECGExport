@@ -12,25 +12,48 @@ import SwiftUI
 
 extension Coordinator {
     
-    nonisolated func update() async throws {
-        
-        // MARK: - Ask for permission
-        let healthStore = HKHealthStore()
-        
+    @MainActor
+    func authorize(healthStore: HKHealthStore) async throws {
         guard HKHealthStore.isHealthDataAvailable() else {
             throw UpdateError.noHealthData
         }
         
         let readTypes: Set<HKObjectType> = [ // FIXME: change the read types.
             HKObjectType.electrocardiogramType(),
-            HKObjectType.quantityType(forIdentifier: .heartRate)!
+            HKObjectType.quantityType(forIdentifier: .heartRate)!,
+            HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
         ]
         
         try await healthStore.requestAuthorization(toShare: [], read: readTypes)
+    }
+    
+    nonisolated func update() async throws {
+        await MainActor.run {
+            withAnimation {
+                self.stage = .working
+            }
+        }
+        
+        let healthStore = HKHealthStore()
+        
+        try await self.authorize(healthStore: healthStore)
         
         
         try await self.storeECG(from: healthStore)
-        try await self.storeHeartRate(from: healthStore)
+        
+        try await self.storeQuantity(from: healthStore, name: "Heart Rate", systemImage: "heart.fill", identifier: .heartRate, unit: .count().unitDivided(by: .minute()), additionalNames: ["motionContext"]) { row, sample in
+            row[.custom("motionContext")] = (sample.metadata?[HKMetadataKeyHeartRateMotionContext] as? NSNumber).flatMap({ HKHeartRateMotionContext(rawValue: $0.intValue)?.description }) ?? ""
+        }
+        
+        try await self.storeQuantity(
+            from: healthStore, name: "Heart Rate Variability", systemImage: "arrow.up.heart.fill",
+            identifier: .heartRateVariabilitySDNN,
+            unit: .second())
+        
+        try await self.storeQuantity(
+            from: healthStore, name: "Oxygen Saturation", systemImage: "drop.degreesign.fill",
+            identifier: .oxygenSaturation,
+            unit: .percent())
         
         await MainActor.run {
             withAnimation {

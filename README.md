@@ -67,4 +67,19 @@ Each file is just a CSV table. The metadata is stored along each value.
 > `groupIndex`:
 > `HealthKit` provides heart rate data in two ways: individual data or clusters of data. I presume data are delivered in cluster when they are recorded in a high frequency. To preserve this *clusterness*, I assigned each cluster a different `groupIndex` to differentiate. Talk to me if you want to look into this.
 
+## Other Quantitative Data
+### Heart Rate Variability
+HealthKit calculates the Heart rate variability (HRV) by measuring the variation between individual heartbeats. While there are multiple ways of computing HRV, HealthKit uses SDNN heart rate variability, which uses the standard deviation of the inter-beat (RR) intervals between normal heartbeats (typically measured in milliseconds).
 
+Values are measured in seconds.
+
+### Oxygen Saturation
+Values are measured in percentage.
+
+
+
+# FAQ
+
+## Why are some folders empty?
+
+If only certain folders are empty, please double check the App has permission to read that data. Go to `Settings > Privacy & Security > Health > ECGExport`, and please ensure everything is checked.
