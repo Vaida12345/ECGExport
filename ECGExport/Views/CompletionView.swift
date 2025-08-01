@@ -25,5 +25,6 @@ struct CompletionView: View {
 
 #Preview {
     CompletionView()
+        .background(Color.listBackground)
 }
 

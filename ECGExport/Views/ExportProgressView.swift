@@ -46,9 +46,8 @@ struct ExportProgressView: View {
                 .padding()
                 .transition(.move(edge: .bottom).combined(with: .opacity))
                 .background {
-                    RoundedRectangle(cornerRadius: 21)
-                        .fill(.background)
-                        .shadow(color: .black.opacity(0.15), radius: 5)
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.listAccessary)
                 }
                 .padding([.horizontal, .top])
             }
@@ -94,5 +93,6 @@ struct ExportProgressView: View {
             }
             .padding()
         }
+        .background(Color.listBackground)
 }
 
