@@ -14,7 +14,7 @@ final class Coordinator: @preconcurrency Equatable {
     
     var progress: [ExportProgress]
     
-    var allFinished = false
+    var stage: Stage = .idle
     
     
     static var preview: Coordinator {
@@ -24,7 +24,7 @@ final class Coordinator: @preconcurrency Equatable {
     
     func reset() {
         self.progress.removeAll()
-        self.allFinished = false
+        self.stage = .idle
     }
     
     
@@ -34,7 +34,14 @@ final class Coordinator: @preconcurrency Equatable {
     
     public static func == (_ lhs: Coordinator, _ rhs: Coordinator) -> Bool {
         lhs.progress == rhs.progress &&
-        lhs.allFinished == rhs.allFinished
+        lhs.stage == rhs.stage
+    }
+    
+    
+    enum Stage: Equatable {
+        case idle
+        case working
+        case finished
     }
     
 }

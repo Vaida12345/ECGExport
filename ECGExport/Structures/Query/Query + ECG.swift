@@ -40,33 +40,14 @@ extension Coordinator {
             
             try itemFolder.makeDirectory()
             
-            let data = AsyncThrowingStream<(timeStamp: TimeInterval, value: HKQuantity?), any Error> { continuation in
-                // Handle the samples here.
-                // Create a query for the voltage measurements
-                let voltageQuery = HKElectrocardiogramQuery(samples) { (query, result) in
-                    switch(result) {
-                    case .measurement(let measurement):
-                        let voltageQuantity = measurement.quantity(for: .appleWatchSimilarToLeadI)
-                        continuation.yield((measurement.timeSinceSampleStart, voltageQuantity))
-                        
-                    case .done:
-                        continuation.finish()
-                    case .error(let error):
-                        continuation.finish(throwing: error)
-                    @unknown default: fatalError()
-                    }
-                }
-                
-                // Execute the query.
-                healthStore.execute(voltageQuery)
-            }
+            let data = HKElectrocardiogramQueryDescriptor(samples).results(for: healthStore)
             
             // MARK: - Transform each sample to CSV
             var table = Tabular<TabularKeys>()
             for try await dataPoint in data {
                 table.append { row in
-                    row[.timeStamp] = String(dataPoint.timeStamp)
-                    row[.value] = dataPoint.value?.description ?? ""
+                    row[.timeStamp] = String(dataPoint.timeSinceSampleStart)
+                    row[.value] = dataPoint.quantity(for: .appleWatchSimilarToLeadI)?.doubleValue(for: .voltUnit(with: .micro)).description ?? ""
                 }
             }
             try table.write(to: itemFolder/"data.csv")
@@ -97,6 +78,6 @@ extension Coordinator {
     
     private enum TabularKeys: String, TabularKey {
         case timeStamp
-        case value
+        case value = "value (mcV)"
     }
 }

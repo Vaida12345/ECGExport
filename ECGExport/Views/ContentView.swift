@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if !coordinator.allFinished {
+            if coordinator.stage != .finished {
                 ExportProgressView(progresses: coordinator.progress)
             } else {
                 CompletionView()
@@ -28,6 +28,7 @@ struct ContentView: View {
         .animation(.spring, value: coordinator.progress)
         .onChange(of: scenePhase) { oldValue, newValue in
             guard newValue == .active else { return }
+            guard coordinator.stage != .working else { return }
             
             let logger = Logger(subsystem: "ECG Export", category: "Export")
             logger.log("Start to export")

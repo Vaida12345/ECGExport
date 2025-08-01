@@ -14,41 +14,55 @@ struct ExportProgressView: View {
     @State private var position = ScrollPosition(idType: UUID.self)
     
     var body: some View {
-        List {
+        ScrollView {
             ForEach(progresses) { progress in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Label(progress.name, systemImage: progress.systemImage)
-                            .labelStyle(.titleAndIcon)
-                            .fontWeight(.medium)
-                        
-                        Spacer()
-                        
-                        Group {
-                            switch progress.stage {
-                            case .preparing: Text("Preparing")
-                            case .finished: Text("Finished")
-                            case .working: EmptyView()
+                Section {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Label(progress.name, systemImage: progress.systemImage)
+                                .labelStyle(.titleAndIcon)
+                                .fontWeight(.medium)
+                            
+                            Spacer()
+                            
+                            Group {
+                                switch progress.stage {
+                                case .preparing: Text("Preparing")
+                                case .finished: Text("Finished")
+                                case .working: EmptyView()
+                                }
                             }
+                            .foregroundStyle(.secondary)
+                            .padding(.trailing, 5)
+                            .font(.callout)
                         }
-                        .foregroundStyle(.secondary)
-                        .padding(.trailing, 5)
-                        .font(.callout)
+                        
+                        ProgressView(value: progress.fractionCompleted)
+                            .progressViewStyle(.linear)
+                            .padding(.vertical, 5)
+                            .tint(progress.stage == .finished ? AnyShapeStyle(.secondary.opacity(0.5)) : AnyShapeStyle(Color.accentColor))
                     }
-                    
-                    ProgressView(value: progress.fractionCompleted)
-                        .progressViewStyle(.linear)
-                        .padding(.vertical, 5)
-                        .tint(progress.stage == .finished ? AnyShapeStyle(.secondary.opacity(0.5)) : AnyShapeStyle(Color.accentColor))
                 }
+                .padding()
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .background {
+                    RoundedRectangle(cornerRadius: 21)
+                        .fill(.background)
+                        .shadow(color: .black.opacity(0.15), radius: 5)
+                }
+                .padding([.horizontal, .top])
             }
+            .scrollTargetLayout()
         }
         .scrollDisabled(true)
         .scrollIndicators(.never)
-        .scrollPosition($position, anchor: .bottom)
+        .scrollPosition($position, anchor: .top)
+        .animation(.easeInOut, value: progresses)
         .onChange(of: progresses) { oldValue, newValue in
             guard let id = newValue.last?.id else { return }
-            position.scrollTo(id: id, anchor: .bottom)
+            withAnimation {
+                position.scrollTo(id: id, anchor: .top)
+            }
         }
     }
     
@@ -56,7 +70,10 @@ struct ExportProgressView: View {
 
 
 #Preview {
+    @Previewable @State var insertNew = false
     @Previewable @State var progress = ExportProgress(name: "123", systemImage: "pencil", completedCount: 10, totalCount: 10)
+    
+    let new = ExportProgress(name: "456", systemImage: "pencil")
     
     var isFinished: Binding<Bool> {
         Binding<Bool> {
@@ -68,10 +85,14 @@ struct ExportProgressView: View {
         }
     }
     
-    ExportProgressView(progresses: [progress])
+    ExportProgressView(progresses: [progress] + (insertNew ? [new] : []))
         .overlay(alignment: .bottom) {
-            Toggle("finish", isOn: isFinished)
-                .padding()
+            VStack {
+                Toggle("finish", isOn: isFinished)
+                
+                Toggle("new", isOn: $insertNew.animation())
+            }
+            .padding()
         }
 }
 

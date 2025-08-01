@@ -33,8 +33,8 @@ extension Coordinator {
         try await self.storeHeartRate(from: healthStore)
         
         await MainActor.run {
-            withAnimation(.default.delay(0.75)) {
-                allFinished = true
+            withAnimation {
+                self.stage = .finished
             }
         }
     }
