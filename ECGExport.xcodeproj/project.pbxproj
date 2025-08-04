@@ -12,6 +12,15 @@
 		B41A05B82E39E582001B5BAE /* Query + ECG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B72E39E57F001B5BAE /* Query + ECG.swift */; };
 		B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */; };
 		B43DCCED2E3C85C2006FECFC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DCCEC2E3C85C0006FECFC /* Colors.swift */; };
+		B48A196F2E40DB6200F26236 /* ECGReader Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B48A19652E40DB6200F26236 /* ECGReader Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B48A19792E40DB7400F26236 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19762E40DB7400F26236 /* ContentView.swift */; };
+		B48A197A2E40DB7400F26236 /* ECGReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19772E40DB7400F26236 /* ECGReaderApp.swift */; };
+		B48A197B2E40DB7400F26236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B48A19752E40DB7400F26236 /* Assets.xcassets */; };
+		B48A197E2E40DBC300F26236 /* WatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A197D2E40DBBF00F26236 /* WatchCoordinator.swift */; };
+		B48A19802E40DD0A00F26236 /* OperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A197F2E40DCD900F26236 /* OperationType.swift */; };
+		B48A19822E40DD2900F26236 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19812E40DD2600F26236 /* SelectionCell.swift */; };
+		B48A19842E40E2A400F26236 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19832E40E2A200F26236 /* SessionView.swift */; };
+		B48A19862E40E6B900F26236 /* WatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19852E40E6B900F26236 /* WatchCoordinator.swift */; };
 		B499272D2E3B6DDD000207F5 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B499272C2E3B6DDD000207F5 /* CompletionView.swift */; };
 		B49D19E22E3996EA00841A32 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D19E12E3996E800841A32 /* Descriptions.swift */; };
 		B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49D3F902E3977F100AB56D0 /* Coordinator + Query.swift */; };
@@ -23,12 +32,45 @@
 		B4A48C552D8E0E74008484E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A48C512D8E0E74008484E2 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B48A196D2E40DB6200F26236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4A48C182D8D8394008484E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B48A19642E40DB6200F26236;
+			remoteInfo = "ECGReader Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B48A19702E40DB6200F26236 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B48A196F2E40DB6200F26236 /* ECGReader Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B41A05B22E39DB19001B5BAE /* ExportProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgress.swift; sourceTree = "<group>"; };
 		B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportProgressView.swift; sourceTree = "<group>"; };
 		B41A05B72E39E57F001B5BAE /* Query + ECG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + ECG.swift"; sourceTree = "<group>"; };
 		B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + Quantity.swift"; sourceTree = "<group>"; };
 		B43DCCEC2E3C85C0006FECFC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B48A19652E40DB6200F26236 /* ECGReader Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECGReader Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B48A19752E40DB7400F26236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B48A19762E40DB7400F26236 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B48A19772E40DB7400F26236 /* ECGReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGReaderApp.swift; sourceTree = "<group>"; };
+		B48A197D2E40DBBF00F26236 /* WatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCoordinator.swift; sourceTree = "<group>"; };
+		B48A197F2E40DCD900F26236 /* OperationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationType.swift; sourceTree = "<group>"; };
+		B48A19812E40DD2600F26236 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		B48A19832E40E2A200F26236 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		B48A19852E40E6B900F26236 /* WatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCoordinator.swift; sourceTree = "<group>"; };
 		B498B9992E3B96C2000CCEE5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B499272C2E3B6DDD000207F5 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		B49D19E12E3996E800841A32 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
@@ -43,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B48A19622E40DB6200F26236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A48C1D2D8D8394008484E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +113,25 @@
 			path = Query;
 			sourceTree = "<group>";
 		};
+		B48A19782E40DB7400F26236 /* ECGReader Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B48A19752E40DB7400F26236 /* Assets.xcassets */,
+				B48A19762E40DB7400F26236 /* ContentView.swift */,
+				B48A19852E40E6B900F26236 /* WatchCoordinator.swift */,
+				B48A19772E40DB7400F26236 /* ECGReaderApp.swift */,
+			);
+			path = "ECGReader Watch App";
+			sourceTree = "<group>";
+		};
+		B48A197C2E40DBBA00F26236 /* WatchCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B48A197D2E40DBBF00F26236 /* WatchCoordinator.swift */,
+			);
+			path = WatchCoordinator;
+			sourceTree = "<group>";
+		};
 		B49D19E32E3996EE00841A32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +144,8 @@
 		B49D3F8D2E3972DF00AB56D0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				B48A197F2E40DCD900F26236 /* OperationType.swift */,
+				B48A197C2E40DBBA00F26236 /* WatchCoordinator */,
 				B4A48C3F2D8E0E13008484E2 /* Coordinator.swift */,
 				B41A05B62E39E55F001B5BAE /* Query */,
 				B41A05B22E39DB19001B5BAE /* ExportProgress.swift */,
@@ -88,6 +158,7 @@
 			children = (
 				B498B9992E3B96C2000CCEE5 /* README.md */,
 				B4A48C432D8E0E13008484E2 /* ECGExport */,
+				B48A19782E40DB7400F26236 /* ECGReader Watch App */,
 				B4A48C212D8D8394008484E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A48C202D8D8394008484E2 /* ECGExport.app */,
+				B48A19652E40DB6200F26236 /* ECGReader Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				B4A48C3E2D8E0E13008484E2 /* ContentView.swift */,
+				B48A19812E40DD2600F26236 /* SelectionCell.swift */,
+				B48A19832E40E2A200F26236 /* SessionView.swift */,
 				B499272C2E3B6DDD000207F5 /* CompletionView.swift */,
 				B41A05B42E39DBD1001B5BAE /* ExportProgressView.swift */,
 			);
@@ -143,6 +217,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B48A19642E40DB6200F26236 /* ECGReader Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B48A19732E40DB6200F26236 /* Build configuration list for PBXNativeTarget "ECGReader Watch App" */;
+			buildPhases = (
+				B48A19612E40DB6200F26236 /* Sources */,
+				B48A19622E40DB6200F26236 /* Frameworks */,
+				B48A19632E40DB6200F26236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECGReader Watch App";
+			packageProductDependencies = (
+			);
+			productName = "ECGReader Watch App";
+			productReference = B48A19652E40DB6200F26236 /* ECGReader Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B4A48C1F2D8D8394008484E2 /* ECGExport */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4A48C2E2D8D8396008484E2 /* Build configuration list for PBXNativeTarget "ECGExport" */;
@@ -150,10 +243,12 @@
 				B4A48C1C2D8D8394008484E2 /* Sources */,
 				B4A48C1D2D8D8394008484E2 /* Frameworks */,
 				B4A48C1E2D8D8394008484E2 /* Resources */,
+				B48A19702E40DB6200F26236 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B48A196E2E40DB6200F26236 /* PBXTargetDependency */,
 			);
 			name = ECGExport;
 			packageProductDependencies = (
@@ -170,9 +265,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					B48A19642E40DB6200F26236 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 					B4A48C1F2D8D8394008484E2 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -196,11 +294,20 @@
 			projectRoot = "";
 			targets = (
 				B4A48C1F2D8D8394008484E2 /* ECGExport */,
+				B48A19642E40DB6200F26236 /* ECGReader Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B48A19632E40DB6200F26236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B48A197B2E40DB7400F26236 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A48C1E2D8D8394008484E2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,10 +320,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B48A19612E40DB6200F26236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B48A19862E40E6B900F26236 /* WatchCoordinator.swift in Sources */,
+				B48A19792E40DB7400F26236 /* ContentView.swift in Sources */,
+				B48A197A2E40DB7400F26236 /* ECGReaderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A48C1C2D8D8394008484E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B48A197E2E40DBC300F26236 /* WatchCoordinator.swift in Sources */,
+				B48A19842E40E2A400F26236 /* SessionView.swift in Sources */,
+				B48A19802E40DD0A00F26236 /* OperationType.swift in Sources */,
+				B48A19822E40DD2900F26236 /* SelectionCell.swift in Sources */,
 				B41A05B32E39DB25001B5BAE /* ExportProgress.swift in Sources */,
 				B43DCCED2E3C85C2006FECFC /* Colors.swift in Sources */,
 				B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */,
@@ -233,7 +354,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B48A196E2E40DB6200F26236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B48A19642E40DB6200F26236 /* ECGReader Watch App */;
+			targetProxy = B48A196D2E40DB6200F26236 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B48A19712E40DB6200F26236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ECGReader;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Vaida.app.ECGExport;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		B48A19722E40DB6200F26236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ECGReader;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Vaida.app.ECGExport;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 		B4A48C2C2D8D8396008484E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -362,10 +547,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the health data to export such data";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the health data to export such data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -379,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -395,10 +581,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use the health data to export such data";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We use the health data to export such data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -412,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -424,6 +611,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B48A19732E40DB6200F26236 /* Build configuration list for PBXNativeTarget "ECGReader Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B48A19712E40DB6200F26236 /* Debug */,
+				B48A19722E40DB6200F26236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B4A48C1B2D8D8394008484E2 /* Build configuration list for PBXProject "ECGExport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

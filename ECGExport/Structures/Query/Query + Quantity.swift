@@ -58,9 +58,9 @@ extension Coordinator {
             // MARK: - Transform each sample to CSV
             var table = Tabular<QuantityTabularKeys>()
             for (index, dataPoint) in samples.enumerated() {
-                let heartRate = HKQuantityType(identifier)
+                let quantityType = HKQuantityType(identifier)
                 let objectPredicate = HKQuery.predicateForObject(with: dataPoint.uuid)
-                let predicate = HKSamplePredicate.quantitySample(type: heartRate, predicate: objectPredicate)
+                let predicate = HKSamplePredicate.quantitySample(type: quantityType, predicate: objectPredicate)
                 
                 let seriesDescriptor = HKQuantitySeriesSampleQueryDescriptor(predicate: predicate, options: [.orderByQuantitySampleStartDate, .includeSample])
                 let series = seriesDescriptor.results(for: healthStore)
