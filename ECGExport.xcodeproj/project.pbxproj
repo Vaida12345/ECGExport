@@ -116,10 +116,10 @@
 		B48A19782E40DB7400F26236 /* ECGReader Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				B48A19752E40DB7400F26236 /* Assets.xcassets */,
+				B48A19772E40DB7400F26236 /* ECGReaderApp.swift */,
 				B48A19762E40DB7400F26236 /* ContentView.swift */,
 				B48A19852E40E6B900F26236 /* WatchCoordinator.swift */,
-				B48A19772E40DB7400F26236 /* ECGReaderApp.swift */,
+				B48A19752E40DB7400F26236 /* Assets.xcassets */,
 			);
 			path = "ECGReader Watch App";
 			sourceTree = "<group>";

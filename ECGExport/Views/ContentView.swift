@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var operation = OperationType.export
     
     let coordinator: Coordinator
-    let watchCoordinator: WatchCoordinator
+    @Bindable var watchCoordinator: WatchCoordinator
     
     @Environment(\.scenePhase) private var scenePhase
     
@@ -54,6 +54,16 @@ struct ContentView: View {
                         .animation(.spring, value: coordinator.progress)
                 case .monitor:
                     SessionView(watchCoordinator: watchCoordinator)
+                        .alert("Session Error", isPresented: $watchCoordinator.sessionErrorIsPresented) {
+                            Button("OK") {
+                                self.coordinator.reset()
+                            }
+                        } message: {
+                            if let description = watchCoordinator.sessionError?.localizedDescription {
+                                Text(description)
+                            }
+                        }
+
                 }
             case .finished:
                 CompletionView()
@@ -79,12 +89,7 @@ struct ContentView: View {
     }
     
     func startMonitor() {
-        withErrorPresented("Failed to start monitoring") {
-            try watchCoordinator.start()
-            self.coordinator.stage = .working
-        } errorHandler: {
-            self.coordinator.reset()
-        }
+        self.coordinator.stage = .working
     }
 }
 

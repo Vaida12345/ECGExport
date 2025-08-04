@@ -19,4 +19,8 @@ struct ECGExportApp: App {
                 .background(Color.listBackground)
         }
     }
+    
+    init() {
+        watchCoordinator.start()
+    }
 }

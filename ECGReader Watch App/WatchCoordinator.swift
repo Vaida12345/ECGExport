@@ -13,8 +13,6 @@ import WatchConnectivity
 @Observable
 final class WatchCoordinator: NSObject, WCSessionDelegate {
     
-    var sessionState: SessionState = .inactive
-    
     var isReachable: Bool = false
     
     let session = WCSession.default
@@ -38,18 +36,12 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
             print(error)
             self.sessionError = error
         } else {
-            self.sessionState = .active
+            self.isReachable = self.session.isReachable
         }
     }
     
     func sessionReachabilityDidChange(_ session: WCSession) {
-        print(session)
         self.isReachable = session.isReachable
-    }
-    
-    
-    enum SessionState {
-        case inactive, deactivated, active
     }
     
 }

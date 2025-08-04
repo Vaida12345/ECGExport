@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ECGReader_Watch_AppApp: App {
+    
+    let watchCoordinator = WatchCoordinator()
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(watchCoordinator: watchCoordinator)
         }
+    }
+    
+    init() {
+        watchCoordinator.start()
     }
 }

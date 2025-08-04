@@ -20,10 +20,18 @@ struct SessionView: View {
             ContentUnavailableView("Session Deactivated", systemImage: "xmark.circle")
         case .active:
             if watchCoordinator.isReachable {
-                watchCoordinator.color
-                    .ignoresSafeArea()
+                List {
+                    ForEach(watchCoordinator.colors, id: \.1) { (color, date) in
+                        HStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(color)
+                            
+                            Text(date, format: .dateTime)
+                        }
+                    }
+                }
             } else {
-                ContentUnavailableView("Watch unreachable", systemImage: "antenna.radiowaves.left.and.right.slash")
+                ContentUnavailableView("Watch Unreachable", systemImage: "antenna.radiowaves.left.and.right.slash", description: Text("Please ensure the watch app is running, and that the watch is nearby."))
             }
         }
     }

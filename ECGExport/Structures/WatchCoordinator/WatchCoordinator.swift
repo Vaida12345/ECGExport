@@ -8,6 +8,7 @@
 import Observation
 import WatchConnectivity
 import SwiftUI
+import OSLog
 
 
 @Observable
@@ -20,8 +21,11 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     let session = WCSession.default
     
     var sessionError: (any Error)?
+    var sessionErrorIsPresented = false
     
-    var color: Color = .listAccessary
+    var colors: [(Color, Date)] = []
+    
+    let logger = Logger(subsystem: "ECG Export", category: "WatchCoordinator")
     
     
     override init() {
@@ -30,25 +34,27 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     }
     
     
-    func start() throws {
+    func start() {
         self.session.activate()
     }
     
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
         if let error {
-            print(error)
             self.sessionError = error
+            sessionErrorIsPresented = true
         } else {
             self.sessionState = .active
+            self.isReachable = self.session.isReachable
         }
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        guard message.count == 3 else { return }
-        guard let r = message["r"] as? Double, let g = message["g"] as? Double, let b = message["b"] as? Double else { return }
+        logger.info("received: \(message)")
+        guard message.count == 4 else { return }
+        guard let r = message["r"] as? Double, let g = message["g"] as? Double, let b = message["b"] as? Double, let date = message["date"] as? Date else { return }
         let color = UIColor(red: r, green: g, blue: b, alpha: 1)
-        self.color = Color(uiColor: color)
+        self.colors.insert((Color(uiColor: color), date), at: 0)
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
@@ -60,12 +66,7 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     }
     
     func sessionReachabilityDidChange(_ session: WCSession) {
-        print(session)
         self.isReachable = session.isReachable
-    }
-    
-    func sessionWatchStateDidChange(_ session: WCSession) {
-        print(session.isPaired, session.isWatchAppInstalled)
     }
     
     
