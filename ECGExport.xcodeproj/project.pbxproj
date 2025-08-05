@@ -14,6 +14,7 @@
 		B43DCCED2E3C85C2006FECFC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DCCEC2E3C85C0006FECFC /* Colors.swift */; };
 		B4718A8D2E416F2F00B3BCC5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4718A8C2E416F2C00B3BCC5 /* Coordinator.swift */; };
 		B4718A912E41751D00B3BCC5 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B4718A902E41751D00B3BCC5 /* Essentials */; };
+		B4718A942E4183B700B3BCC5 /* Watch + Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4718A932E4183B300B3BCC5 /* Watch + Transfer.swift */; };
 		B48A196F2E40DB6200F26236 /* ECGReader Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B48A19652E40DB6200F26236 /* ECGReader Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B48A19792E40DB7400F26236 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19762E40DB7400F26236 /* ContentView.swift */; };
 		B48A197A2E40DB7400F26236 /* ECGReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19772E40DB7400F26236 /* ECGReaderApp.swift */; };
@@ -67,6 +68,7 @@
 		B4718A8C2E416F2C00B3BCC5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B4718A8E2E41722000B3BCC5 /* ECGReader-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ECGReader-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B4718A922E4175C800B3BCC5 /* ECGReader Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECGReader Watch App.entitlements"; sourceTree = "<group>"; };
+		B4718A932E4183B300B3BCC5 /* Watch + Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Watch + Transfer.swift"; sourceTree = "<group>"; };
 		B48A19652E40DB6200F26236 /* ECGReader Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECGReader Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B48A19752E40DB7400F26236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B48A19762E40DB7400F26236 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				B48A197D2E40DBBF00F26236 /* WatchCoordinator.swift */,
+				B4718A932E4183B300B3BCC5 /* Watch + Transfer.swift */,
 			);
 			path = WatchCoordinator;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				B43DCCED2E3C85C2006FECFC /* Colors.swift in Sources */,
 				B4A48C462D8E0E13008484E2 /* ContentView.swift in Sources */,
 				B4A48C472D8E0E13008484E2 /* Coordinator.swift in Sources */,
+				B4718A942E4183B700B3BCC5 /* Watch + Transfer.swift in Sources */,
 				B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */,
 				B49D3F912E3977F500AB56D0 /* Coordinator + Query.swift in Sources */,
 				B499272D2E3B6DDD000207F5 /* CompletionView.swift in Sources */,
@@ -382,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ECGReader Watch App/ECGReader Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ECGReader-Watch-App-Info.plist";
@@ -414,7 +418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ECGReader Watch App/ECGReader Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ECGReader-Watch-App-Info.plist";
@@ -567,7 +571,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -585,7 +589,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -601,7 +605,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -619,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -34,6 +34,14 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     }
     
     
+    static func preview(data: [(Double, Date)] = []) -> WatchCoordinator {
+        let coordinator = WatchCoordinator()
+        coordinator.data = data
+        coordinator.sessionState = .active
+        return coordinator
+    }
+    
+    
     func start() {
         self.session.activate()
     }
