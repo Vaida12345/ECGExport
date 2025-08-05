@@ -23,7 +23,7 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     var sessionError: (any Error)?
     var sessionErrorIsPresented = false
     
-    var colors: [(Color, Date)] = []
+    var data: [(Double, Date)] = []
     
     let logger = Logger(subsystem: "ECG Export", category: "WatchCoordinator")
     
@@ -51,10 +51,9 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         logger.info("received: \(message)")
-        guard message.count == 4 else { return }
-        guard let r = message["r"] as? Double, let g = message["g"] as? Double, let b = message["b"] as? Double, let date = message["date"] as? Date else { return }
-        let color = UIColor(red: r, green: g, blue: b, alpha: 1)
-        self.colors.insert((Color(uiColor: color), date), at: 0)
+        guard message.count == 2 else { return }
+        guard let heartRate = message["heartRate"] as? Double, let date = message["date"] as? Date else { return }
+        self.data.insert((heartRate, date), at: 0)
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {

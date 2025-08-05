@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct ECGReader_Watch_AppApp: App {
     
-    let watchCoordinator = WatchCoordinator()
+    let watchCoordinator = WatchCoordinator.shared
     
     
     var body: some Scene {

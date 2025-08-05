@@ -12,6 +12,8 @@
 		B41A05B82E39E582001B5BAE /* Query + ECG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B72E39E57F001B5BAE /* Query + ECG.swift */; };
 		B41A05BA2E39E5D2001B5BAE /* Query + Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */; };
 		B43DCCED2E3C85C2006FECFC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DCCEC2E3C85C0006FECFC /* Colors.swift */; };
+		B4718A8D2E416F2F00B3BCC5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4718A8C2E416F2C00B3BCC5 /* Coordinator.swift */; };
+		B4718A912E41751D00B3BCC5 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B4718A902E41751D00B3BCC5 /* Essentials */; };
 		B48A196F2E40DB6200F26236 /* ECGReader Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B48A19652E40DB6200F26236 /* ECGReader Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B48A19792E40DB7400F26236 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19762E40DB7400F26236 /* ContentView.swift */; };
 		B48A197A2E40DB7400F26236 /* ECGReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A19772E40DB7400F26236 /* ECGReaderApp.swift */; };
@@ -62,6 +64,9 @@
 		B41A05B72E39E57F001B5BAE /* Query + ECG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + ECG.swift"; sourceTree = "<group>"; };
 		B41A05B92E39E5CD001B5BAE /* Query + Quantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Query + Quantity.swift"; sourceTree = "<group>"; };
 		B43DCCEC2E3C85C0006FECFC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B4718A8C2E416F2C00B3BCC5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B4718A8E2E41722000B3BCC5 /* ECGReader-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ECGReader-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B4718A922E4175C800B3BCC5 /* ECGReader Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ECGReader Watch App.entitlements"; sourceTree = "<group>"; };
 		B48A19652E40DB6200F26236 /* ECGReader Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECGReader Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B48A19752E40DB7400F26236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B48A19762E40DB7400F26236 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4718A912E41751D00B3BCC5 /* Essentials in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +122,11 @@
 		B48A19782E40DB7400F26236 /* ECGReader Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				B4718A922E4175C800B3BCC5 /* ECGReader Watch App.entitlements */,
+				B4718A8E2E41722000B3BCC5 /* ECGReader-Watch-App-Info.plist */,
 				B48A19772E40DB7400F26236 /* ECGReaderApp.swift */,
 				B48A19762E40DB7400F26236 /* ContentView.swift */,
+				B4718A8C2E416F2C00B3BCC5 /* Coordinator.swift */,
 				B48A19852E40E6B900F26236 /* WatchCoordinator.swift */,
 				B48A19752E40DB7400F26236 /* Assets.xcassets */,
 			);
@@ -231,6 +240,7 @@
 			);
 			name = "ECGReader Watch App";
 			packageProductDependencies = (
+				B4718A902E41751D00B3BCC5 /* Essentials */,
 			);
 			productName = "ECGReader Watch App";
 			productReference = B48A19652E40DB6200F26236 /* ECGReader Watch App.app */;
@@ -287,6 +297,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				B4A48C312D8D83E1008484E2 /* XCRemoteSwiftPackageReference "Tabular" */,
+				B4718A8F2E41751D00B3BCC5 /* XCRemoteSwiftPackageReference "Essentials" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B4A48C212D8D8394008484E2 /* Products */;
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4718A8D2E416F2F00B3BCC5 /* Coordinator.swift in Sources */,
 				B48A19862E40E6B900F26236 /* WatchCoordinator.swift in Sources */,
 				B48A19792E40DB7400F26236 /* ContentView.swift in Sources */,
 				B48A197A2E40DB7400F26236 /* ECGReaderApp.swift in Sources */,
@@ -368,11 +380,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ECGReader Watch App/ECGReader Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ECGReader-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ECGReader;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We collect health data for the iPhone app";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app shares recording sessions";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Vaida.app.ECGExport;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -396,11 +412,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ECGReader Watch App/ECGReader Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ECGReader-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ECGReader;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We collect health data for the iPhone app";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app shares recording sessions";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Vaida.app.ECGExport;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -547,7 +567,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -565,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -581,7 +601,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ECGExport/Assets/ECGExport.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ECGExport/Assets/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -599,7 +619,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Vaida.app.ECGExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -641,6 +661,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B4718A8F2E41751D00B3BCC5 /* XCRemoteSwiftPackageReference "Essentials" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://www.github.com/Vaida12345/Essentials";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.3;
+			};
+		};
 		B4A48C312D8D83E1008484E2 /* XCRemoteSwiftPackageReference "Tabular" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Vaida12345/Tabular";
@@ -652,6 +680,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B4718A902E41751D00B3BCC5 /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4718A8F2E41751D00B3BCC5 /* XCRemoteSwiftPackageReference "Essentials" */;
+			productName = Essentials;
+		};
 		B4A48C322D8D83E1008484E2 /* Tabular */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4A48C312D8D83E1008484E2 /* XCRemoteSwiftPackageReference "Tabular" */;

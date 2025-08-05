@@ -7,41 +7,34 @@
 
 import SwiftUI
 import WatchConnectivity
+import Essentials
 
 
 struct ContentView: View {
     
     let watchCoordinator: WatchCoordinator
     
-    @State private var color: Color = .blue
+    let coordinator = Coordinator.shared
+    
     
     var body: some View {
-        if watchCoordinator.isReachable {
-            Rectangle()
-                .fill(color)
-                .ignoresSafeArea()
-                .onTapGesture {
-                    var color: Color = self.color
-                    while color == self.color {
-                        color = [Color.blue, .green, .yellow, .red, .orange, .pink, .purple, .black, .white, .gray].randomElement()!
-                    }
-                    
-                    var r: CGFloat = 0
-                    var g: CGFloat = 0
-                    var b: CGFloat = 0
-                    UIColor(color).getRed(&r, green: &g, blue: &b, alpha: nil)
-                    
-                    let date = Date()
-                    
-                    watchCoordinator.session.sendMessage(["r": r, "g": g, "b": b, "date": date], replyHandler: nil)
-                    self.color = color
-                }
-        } else {
-            ContentUnavailableView("Phone Unreachable", systemImage: "antenna.radiowaves.left.and.right.slash")
+        VStack(alignment: .leading) {
+            Text("Hear Rate")
+                .font(.headline)
+            
+            Text(coordinator.heartRate?.formatted(.number.precision(2)) ?? "loading")
+            
+            Text("bpm")
+                .font(.caption)
+        }
+        .task {
+            await withErrorPresented("Failed to fetch data") {
+                try await coordinator.startMonitor()
+            }
         }
     }
 }
 
 #Preview {
-    ContentView(watchCoordinator: .init())
+    ContentView(watchCoordinator: .shared)
 }

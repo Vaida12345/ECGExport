@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Essentials
 
 
 struct SessionView: View {
@@ -21,12 +22,14 @@ struct SessionView: View {
         case .active:
             if watchCoordinator.isReachable {
                 List {
-                    ForEach(watchCoordinator.colors, id: \.1) { (color, date) in
+                    ForEach(watchCoordinator.data, id: \.1) { (heartRate, date) in
                         HStack {
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(color)
+                            Text("\(heartRate, format: .number.precision(2)) bpm")
                             
-                            Text(date, format: .dateTime)
+                            Spacer()
+                            
+                            Text(date, format: .dateTime.hour().minute().second())
+                                .font(.caption)
                         }
                     }
                 }

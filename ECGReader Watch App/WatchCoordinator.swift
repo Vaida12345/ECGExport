@@ -20,7 +20,7 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     var sessionError: (any Error)?
     
     
-    override init() {
+    private override init() {
         super.init()
         self.session.delegate = self
     }
@@ -43,5 +43,8 @@ final class WatchCoordinator: NSObject, WCSessionDelegate {
     func sessionReachabilityDidChange(_ session: WCSession) {
         self.isReachable = session.isReachable
     }
+    
+    
+    static let shared = WatchCoordinator()
     
 }
